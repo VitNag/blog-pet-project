@@ -4,7 +4,7 @@ import {IconPlus} from '@tabler/icons-react';
 const useStyles = createStyles((theme) => ({
     wrapper: {
         paddingTop: `calc(${theme.spacing.xl} * 2)`,
-        minHeight: rem(900),
+        minHeight: rem(1700),
         backgroundImage: `radial-gradient(${theme.colors[theme.primaryColor][6]} 0%, ${theme.colors[theme.primaryColor][4]} 100%)`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'top left',
@@ -135,18 +135,14 @@ const TechStack = () => {
                             проекту.
                         </Accordion.Panel>
                     </Accordion.Item>
-
                 </Accordion>
 
-
-
                 <Title mt={50} align="center" className={classes.title}>
-                    Технології що використовуються
+                    GraphQL
                 </Title>
 
                 <Accordion
                     chevronPosition="right"
-                    defaultValue="nextjs"
                     chevronSize={50}
                     variant="separated"
                     disableChevronRotation
@@ -154,41 +150,97 @@ const TechStack = () => {
                         <IconPlus size="1.05rem" stroke={1.5}/>
                     </ThemeIcon>}
                 >
-                    <Accordion.Item className={classes.item} value="nextjs">
-                        <Accordion.Control>NextJS</Accordion.Control>
-                        <Accordion.Panel>{nextjs}</Accordion.Panel>
+                    <Accordion.Item className={classes.item} value="effective-queries">
+                        <Accordion.Control>Ефективні запити</Accordion.Control>
+                        <Accordion.Panel>GraphQL дозволяє клієнту точно вказувати, які дані йому потрібні, тому лише
+                            необхідна інформація передається через мережу. Це забезпечує ефективнішу комунікацію між
+                            клієнтом та сервером, особливо при наявності об'ємного обсягу даних.
+                        </Accordion.Panel>
                     </Accordion.Item>
 
-                    <Accordion.Item className={classes.item} value="another-account">
-                        <Accordion.Control>Can I create more that one account?</Accordion.Control>
-                        <Accordion.Panel>{placeholder}</Accordion.Panel>
+                    <Accordion.Item className={classes.item} value="flexibility">
+                        <Accordion.Control>Гнучкість</Accordion.Control>
+                        <Accordion.Panel>GraphQL надає клієнту можливість отримувати лише ту інформацію, яка йому
+                            потрібна. Клієнт може визначити структуру даних, яку він очікує, і отримувати ці дані у
+                            відповіді. Це дозволяє уникнути проблеми під- або надзавантаження, яка може виникнути з
+                            використанням традиційних REST API.
+                        </Accordion.Panel>
                     </Accordion.Item>
 
-                    <Accordion.Item className={classes.item} value="newsletter">
-                        <Accordion.Control>How can I subscribe to monthly newsletter?</Accordion.Control>
-                        <Accordion.Panel>{placeholder}</Accordion.Panel>
+                    <Accordion.Item className={classes.item} value="req">
+                        <Accordion.Control>Один запит - багато данних</Accordion.Control>
+                        <Accordion.Panel>GraphQL дозволяє отримувати багато різних типів даних за один запит. Запити
+                            можуть включати декілька поля та зв'язків між об'єктами. Це зменшує кількість запитів, які
+                            необхідно виконати для отримання повної інформації про блог, та зменшує навантаження на
+                            сервер</Accordion.Panel>
                     </Accordion.Item>
 
-                    <Accordion.Item className={classes.item} value="credit-card">
-                        <Accordion.Control>Do you store credit card information securely?</Accordion.Control>
-                        <Accordion.Panel>{placeholder}</Accordion.Panel>
+                    <Accordion.Item className={classes.item} value="docs">
+                        <Accordion.Control>Автоматичне документування</Accordion.Control>
+                        <Accordion.Panel>GraphQL надає можливість автоматично генерувати документацію API. Це спрощує
+                            розробку та розуміння API для інших розробників, які можуть працювати над проектом у
+                            майбутньому.
+                        </Accordion.Panel>
                     </Accordion.Item>
 
-                    <Accordion.Item className={classes.item} value="payment">
-                        <Accordion.Control>What payment systems to you work with?</Accordion.Control>
-                        <Accordion.Panel>{placeholder}</Accordion.Panel>
+                    <Accordion.Item className={classes.item} value="mutations">
+                        <Accordion.Control>Мутації</Accordion.Control>
+                        <Accordion.Panel>GraphQL також надає можливість виконувати мутації, що дозволяє модифікувати
+                            дані на сервері. Це означає, що клієнт може створювати нові записи, оновлювати існуючі дані
+                            або видаляти інформацію через запити GraphQL.
+                        </Accordion.Panel>
+                    </Accordion.Item>
+                </Accordion>
+
+                <Title mt={50} align="center" className={classes.title}>
+                    Mantine UI
+                </Title>
+
+                <Accordion
+                    chevronPosition="right"
+                    chevronSize={50}
+                    variant="separated"
+                    disableChevronRotation
+                    chevron={<ThemeIcon radius="xl" className={classes.gradient} size={32}>
+                        <IconPlus size="1.05rem" stroke={1.5}/>
+                    </ThemeIcon>}
+                >
+                    <Accordion.Item className={classes.item} value="effective-queries">
+                        <Accordion.Control>Швидкий старт</Accordion.Control>
+                        <Accordion.Panel>Mantine UI надає готові компоненти, які можна використовувати зразу без
+                            необхідності створювати їх з нуля. Це дозволяє прискорити розробку вашого проекту.
+                        </Accordion.Panel>
                     </Accordion.Item>
 
-                    <Accordion.Item className={classes.item} value="payment">
-                        <Accordion.Control>What payment systems to you work with?</Accordion.Control>
-                        <Accordion.Panel>{placeholder}</Accordion.Panel>
+                    <Accordion.Item className={classes.item} value="flexibility">
+                        <Accordion.Control>Однорідний дизайн</Accordion.Control>
+                        <Accordion.Panel>Mantine UI має консистентний стиль дизайну для всіх своїх компонентів. Це
+                            допомагає створювати єдиний та професійний вигляд для вашого інтернет-блогу.
+                        </Accordion.Panel>
                     </Accordion.Item>
 
-                    <Accordion.Item className={classes.item} value="payment">
-                        <Accordion.Control>What payment systems to you work with?</Accordion.Control>
-                        <Accordion.Panel>{placeholder}</Accordion.Panel>
+                    <Accordion.Item className={classes.item} value="req">
+                        <Accordion.Control>Відповідність до сучасних тенденцій</Accordion.Control>
+                        <Accordion.Panel>Mantine UI враховує останні тенденції веб-дизайну та інтерфейсів, що дозволяє
+                            вашому блогу виглядати сучасно та привабливо для користувачів.
+                        </Accordion.Panel>
                     </Accordion.Item>
 
+                    <Accordion.Item className={classes.item} value="docs">
+                        <Accordion.Control>Гнучкість та налаштовування</Accordion.Control>
+                        <Accordion.Panel>Mantine UI надає можливість налаштовувати свої компоненти, щоб вони відповідали
+                            вашим потребам. Ви можете змінювати кольори, розміри, стилі та інші аспекти компонентів
+                            залежно від вашого проекту.
+                        </Accordion.Panel>
+                    </Accordion.Item>
+
+                    <Accordion.Item className={classes.item} value="mutations">
+                        <Accordion.Control>Реактивність</Accordion.Control>
+                        <Accordion.Panel>Mantine UI підтримує реактивний підхід до розробки, де зміни в компонентах
+                            автоматично оновлюються без перезавантаження сторінки. Це полегшує розробку та відладку
+                            вашого проекту.
+                        </Accordion.Panel>
+                    </Accordion.Item>
                 </Accordion>
             </Container>
         </div>

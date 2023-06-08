@@ -22,17 +22,6 @@ export default function Home({posts}) {
                 >Обрані публікації</Title>
                 <FeaturedPosts/>
                 <Features/>
-                {/*<Grid>*/}
-                {/*    <Grid.Col lg={8} md={12}>*/}
-                {/*        {posts.map((post, index) => (<PostCard key={index} post={post.node}/>))}*/}
-                {/*    </Grid.Col>*/}
-                {/*    <Grid.Col lg={4} md={12}>*/}
-                {/*        <Stack>*/}
-                {/*            <PostWidget/>*/}
-                {/*            <Categories/>*/}
-                {/*        </Stack>*/}
-                {/*    </Grid.Col>*/}
-                {/*</Grid>*/}
             </Container>
         </main>
     </>)
