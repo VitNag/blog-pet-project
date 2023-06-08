@@ -2,6 +2,8 @@ import {AppProps} from 'next/app';
 import Head from 'next/head';
 import {MantineProvider} from '@mantine/core';
 
+import {HeaderResponsive} from "../components/Header";
+
 export default function App(props: AppProps) {
     const {Component, pageProps} = props;
 
@@ -19,6 +21,7 @@ export default function App(props: AppProps) {
                 primaryColor: 'orange', colorScheme: 'dark',
             }}
         >
+            <HeaderResponsive/>
             <Component {...pageProps} />
         </MantineProvider>
     </>);
