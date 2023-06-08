@@ -4,7 +4,6 @@ import moment from 'moment';
 import {Avatar, Group, Image, Paper, Text, Title} from '@mantine/core';
 import {IconCalendarEvent} from '@tabler/icons-react';
 
-
 const PostDetail = ({post}) => {
     const getContentFragment = (index, text, obj, type) => {
         let modifiedText = text;

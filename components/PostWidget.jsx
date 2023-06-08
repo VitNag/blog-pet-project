@@ -55,29 +55,29 @@ function PostWidget({categories, slug}) {
             radius="md"
             sx={{backgroundColor: `#212529`}}
         >
-        <Title mb={10} variant="gradient"
-               gradient={{from: '#F8F9FA', to: '#E9ECEF', deg: 45}}
-               sx={{fontFamily: 'Greycliff CF, sans-serif'}}
-        >{slug ? 'Related Posts' : 'Recent Posts'}</Title>
-        {relatedPosts.map((post, index) => (<Link key={post.title} href={`/post/${post.slug}`}>
-            <Paper
-                mb={10}
-                shadow="md"
-                p="xl"
-                radius="md"
-                sx={{backgroundImage: `url(${post.featuredImage.url})`}}
-                className={classes.card}
-            >
-                <div>
-                    <Text className={classes.category} size="xs">
-                        {moment(post.createdAt).format('MMM DD, YYYY')}
-                    </Text>
-                    <Title order={3} className={classes.title}>
-                        {post.title}
-                    </Title>
-                </div>
-            </Paper>
-        </Link>))}
+            <Title mb={10} variant="gradient"
+                   gradient={{from: '#F8F9FA', to: '#E9ECEF', deg: 45}}
+                   sx={{fontFamily: 'Greycliff CF, sans-serif'}}
+            >{slug ? 'Пов’язані публікації' : 'Останні публікації'}</Title>
+            {relatedPosts.map((post, index) => (<Link key={post.title} href={`/post/${post.slug}`}>
+                <Paper
+                    mb={10}
+                    shadow="md"
+                    p="xl"
+                    radius="md"
+                    sx={{backgroundImage: `url(${post.featuredImage.url})`}}
+                    className={classes.card}
+                >
+                    <div>
+                        <Text className={classes.category} size="xs">
+                            {moment(post.createdAt).format('MMM DD, YYYY')}
+                        </Text>
+                        <Title order={3} className={classes.title}>
+                            {post.title}
+                        </Title>
+                    </div>
+                </Paper>
+            </Link>))}
         </Paper>
     </>)
 }

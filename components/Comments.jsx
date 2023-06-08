@@ -38,7 +38,7 @@ const Comments = ({slug}) => {
                 <h3 className="text-xl mb-8 font-semibold border-b pb-4">
                     {comments.length}
                     {' '}
-                    Comments
+                    Коментарі
                 </h3>
                 {comments.map((comment, index) => (<Paper mb={10} withBorder radius="md" className={classes.comment}>
                     <Group>

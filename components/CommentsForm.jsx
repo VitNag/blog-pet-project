@@ -49,20 +49,20 @@ const CommentsForm = ({slug}) => {
             weight={900}
             align="center"
         >
-            Get in touch
+            Будемо на зв'язку
         </Title>
 
         <SimpleGrid cols={2} mt="xl" breakpoints={[{maxWidth: 'sm', cols: 1}]}>
             <TextInput
-                label="Name"
-                placeholder="Your name"
+                label="Ім'я"
+                placeholder="Ваше ім'я"
                 name="name"
                 variant="filled"
                 {...form.getInputProps('name')}
             />
             <TextInput
-                label="Email"
-                placeholder="Your email"
+                label="Електронна пошта"
+                placeholder="Ваша електронна адреса"
                 name="email"
                 variant="filled"
                 {...form.getInputProps('email')}
@@ -71,8 +71,8 @@ const CommentsForm = ({slug}) => {
 
         <Textarea
             mt="md"
-            label="Message"
-            placeholder="Your message"
+            label="Повідомлення"
+            placeholder="Ваше повідомлення"
             maxRows={10}
             minRows={5}
             autosize
@@ -83,9 +83,9 @@ const CommentsForm = ({slug}) => {
 
         <Group mb={30} position="center" mt="xl">
             <Button type="submit" size="md">
-                Send message
+                Надіслати коментар
             </Button>
-            {showSuccessMessage && <span>Comment submitted for review</span>}
+            {showSuccessMessage && <span>Коментар надіслано на перевірку</span>}
         </Group>
     </form>);
 };

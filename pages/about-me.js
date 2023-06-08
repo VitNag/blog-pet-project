@@ -1,6 +1,7 @@
 import {Button, Container, createStyles, Group, Image, List, rem, Text, ThemeIcon, Title,} from '@mantine/core';
 import {IconCheck} from '@tabler/icons-react';
 import image from '../public/creator.svg';
+
 import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
@@ -49,7 +50,6 @@ const useStyles = createStyles((theme) => ({
         padding: `${rem(4)} ${rem(12)}`,
     },
 }));
-
 
 const AboutMe = () => {
     const {classes} = useStyles();

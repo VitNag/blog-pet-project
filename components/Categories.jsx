@@ -22,7 +22,7 @@ const Categories = () => {
         <Title mb={10} variant="gradient"
                gradient={{from: '#F8F9FA', to: '#E9ECEF', deg: 45}}
                sx={{fontFamily: 'Greycliff CF, sans-serif'}}
-        >Categories</Title>
+        >Категорії</Title>
         <Stack spacing="xs" justify="flex-start">
             {categories.map((category, index) => (<Link key={index} href={`/category/${category.slug}`}>
                 <Text c='white' fz="lg" fw={500}>{category.name}</Text>

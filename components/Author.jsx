@@ -8,7 +8,6 @@ const Author = ({author}) => (<div className="text-center mt-20 mb-8 p-12 relati
         p="xl"
         radius="md"
         sx={{backgroundColor: `#212529`}}
-        // className={classes.card}
     >
         <Group position="center" spacing="xs" mb={5}>
             <Avatar size="xl" src={author.photo.url} alt={author.name}/>

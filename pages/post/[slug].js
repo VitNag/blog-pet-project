@@ -4,6 +4,7 @@ import {useRouter} from 'next/router';
 import {Author, Categories, Comments, CommentsForm, LoaderComp, PostDetail, PostWidget} from '../../components';
 import {getPostDetails, getPosts} from '../../services';
 import AdjacentPosts from '../../sections/AdjacentPosts';
+
 import {Container, Grid} from '@mantine/core';
 
 const PostDetails = ({post}) => {

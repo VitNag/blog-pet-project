@@ -56,7 +56,7 @@ export default function Error() {
             <Group position="center">
                 <Link href={'/'}>
                     <Button variant="white" size="md">
-                        Refresh the page
+                        На головну сторінку
                     </Button>
                 </Link>
             </Group>

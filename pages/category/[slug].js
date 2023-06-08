@@ -4,6 +4,7 @@ import {useRouter} from 'next/router';
 import {getCategories, getCategoryPost} from '../../services';
 import {Categories, PostCard} from '../../components';
 import LoaderComp from "../../components/LoaderComp";
+
 import {Container, Grid} from '@mantine/core';
 
 const CategoryPost = ({posts}) => {

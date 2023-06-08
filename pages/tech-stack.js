@@ -61,9 +61,6 @@ const useStyles = createStyles((theme) => ({
         },
     },
 }));
-const placeholder = ''
-const nextjs = ''
-
 
 const TechStack = () => {
     const {classes} = useStyles();

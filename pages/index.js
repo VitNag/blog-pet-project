@@ -1,10 +1,10 @@
 import Head from 'next/head'
+
 import FeaturedPosts from '../sections/FeaturedPosts'
-import {Categories, Features, PostCard, PostWidget} from '../components';
+import {Features} from '../components';
 import {getPosts} from '../services';
 
-import {Container,Title, Grid, Stack} from '@mantine/core';
-
+import {Container, Title} from '@mantine/core';
 
 export default function Home({posts}) {
     return (<>
