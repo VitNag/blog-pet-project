@@ -32,8 +32,6 @@ const Comments = ({slug}) => {
         });
     }, []);
 
-    console.log(comments)
-
     return (<>
         {comments.length > 0 && (
             <Paper sx={{backgroundColor: `#212529`}} withBorder radius="md" className={classes.comment}>

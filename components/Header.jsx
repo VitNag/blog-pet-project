@@ -89,9 +89,6 @@ export function HeaderResponsive() {
     const active = router.pathname;
     const {classes, cx} = useStyles();
 
-    console.log(active)
-    console.log(router.pathname)
-
     const items = mockdata.map((link) => (<a
         key={link.label}
         href={link.link}

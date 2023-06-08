@@ -59,7 +59,7 @@ function PostWidget({categories, slug}) {
                gradient={{from: '#F8F9FA', to: '#E9ECEF', deg: 45}}
                sx={{fontFamily: 'Greycliff CF, sans-serif'}}
         >{slug ? 'Related Posts' : 'Recent Posts'}</Title>
-        {relatedPosts.map((post, index) => (<Link href={`/post/${post.slug}`}>
+        {relatedPosts.map((post, index) => (<Link key={post.title} href={`/post/${post.slug}`}>
             <Paper
                 mb={10}
                 shadow="md"

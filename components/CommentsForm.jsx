@@ -25,8 +25,6 @@ const CommentsForm = ({slug}) => {
             name, email, comment, slug,
         };
 
-
-        console.log('res', commentObj)
         submitComment(commentObj)
             .then((res) => {
                 if (res.createComment) {
