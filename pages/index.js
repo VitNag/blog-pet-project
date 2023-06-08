@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import FeaturedPosts from '../sections/FeaturedPosts'
-import {Categories, PostCard, PostWidget} from '../components';
+import {Categories, Features, PostCard, PostWidget} from '../components';
 import {getPosts} from '../services';
 
-import {Container, Grid, Stack} from '@mantine/core';
+import {Container,Title, Grid, Stack} from '@mantine/core';
 
 
 export default function Home({posts}) {
@@ -16,7 +16,12 @@ export default function Home({posts}) {
         </Head>
         <main>
             <Container size="xl">
+                <Title mb={10} variant="gradient"
+                       gradient={{from: '#F8F9FA', to: '#E9ECEF', deg: 45}}
+                       sx={{fontFamily: 'Greycliff CF, sans-serif'}}
+                >Обрані публікації</Title>
                 <FeaturedPosts/>
+                <Features/>
                 {/*<Grid>*/}
                 {/*    <Grid.Col lg={8} md={12}>*/}
                 {/*        {posts.map((post, index) => (<PostCard key={index} post={post.node}/>))}*/}

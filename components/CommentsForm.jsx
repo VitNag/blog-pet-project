@@ -83,7 +83,7 @@ const CommentsForm = ({slug}) => {
             {...form.getInputProps('message')}
         />
 
-        <Group position="center" mt="xl">
+        <Group mb={30} position="center" mt="xl">
             <Button type="submit" size="md">
                 Send message
             </Button>

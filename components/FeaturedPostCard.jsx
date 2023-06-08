@@ -53,7 +53,7 @@ function FeaturedPostCard({post}) {
                 </Title>
             </div>
             <Button variant="white" color="dark">
-                Read article
+                Продовжи читати
             </Button>
 
         </Paper>

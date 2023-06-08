@@ -1,14 +1,24 @@
 import React from 'react';
-import {PostCard} from "../components";
-import {getPosts} from "../services";
+import {Categories, PostCard, PostWidget} from "../components";
 
-export default function Publications ({posts})  {
+import {getPosts} from '../services';
+import {Container, Grid} from '@mantine/core';
+
+
+export default function Publications({posts}) {
     console.log(posts)
     return (
-        <div>
-            {posts.map((post, index) => (<PostCard key={index} post={post.node}/>))}
-        </div>
-    );
+
+        <Container size="xl">
+            <Grid>
+                <Grid.Col xs={12} md={8}>
+                    {posts.map((post, index) => (<PostCard key={index} post={post.node}/>))}</Grid.Col>
+                <Grid.Col xs={12} md={4}>
+                    <PostWidget/>
+                    <Categories/>
+                </Grid.Col>
+            </Grid>
+        </Container>);
 };
 
 
