@@ -1,36 +1,31 @@
 import React from 'react';
 import {useRouter} from 'next/router';
 
-import {Author, Categories, Comments, CommentsForm, Loader, PostDetail, PostWidget} from '../../components';
+import {Author, Categories, Comments, CommentsForm, LoaderComp, PostDetail, PostWidget} from '../../components';
 import {getPostDetails, getPosts} from '../../services';
-import {AdjacentPosts} from '../../sections';
+import AdjacentPosts from '../../sections/AdjacentPosts';
+import {Container, Grid} from '@mantine/core';
 
 const PostDetails = ({post}) => {
     const router = useRouter();
 
     if (router.isFallback) {
-        return <Loader/>;
+        return <LoaderComp/>;
     }
 
-    return (<>
-        <div className="container mx-auto px-10 mb-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                <div className="col-span-1 lg:col-span-8">
-                    <PostDetail post={post}/>
-                    <Author author={post.author}/>
-                    <AdjacentPosts slug={post.slug} createdAt={post.createdAt}/>
-                    <CommentsForm slug={post.slug}/>
-                    <Comments slug={post.slug}/>
-                </div>
-                <div className="col-span-1 lg:col-span-4">
-                    <div className="relative lg:sticky top-8">
-                        <PostWidget slug={post.slug} categories={post.categories.map((category) => category.slug)}/>
-                        <Categories/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </>);
+    return (<Container size="xl">
+        <Grid>
+            <Grid.Col xs={12} md={8}> <PostDetail post={post}/>
+                <Author author={post.author}/>
+                <AdjacentPosts slug={post.slug} createdAt={post.createdAt}/>
+                <CommentsForm slug={post.slug}/>
+                <Comments slug={post.slug}/></Grid.Col>
+            <Grid.Col xs={12} md={4}>
+                <PostWidget slug={post.slug} categories={post.categories.map((category) => category.slug)}/>
+                <Categories/>
+            </Grid.Col>
+        </Grid>
+    </Container>);
 };
 export default PostDetails;
 

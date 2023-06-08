@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Link from 'next/link';
+import {Paper, Stack, Text, Title} from '@mantine/core';
 
 import {getCategories} from '../services';
 
@@ -12,13 +13,22 @@ const Categories = () => {
         });
     }, []);
 
-    return (<div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-        <h3 className="text-xl mb-8 font-semibold border-b pb-4">Categories</h3>
-        {categories.map((category, index) => (<Link key={index} href={`/category/${category.slug}`}>
-            <span
-                className={`cursor-pointer block ${(index === categories.length - 1) ? 'border-b-0' : 'border-b'} pb-3 mb-3`}>{category.name}</span>
-        </Link>))}
-    </div>);
+    return (<Paper
+        shadow="md"
+        p="md"
+        radius="md"
+        sx={{backgroundColor: `#212529`}}
+    >
+        <Title mb={10} variant="gradient"
+               gradient={{from: '#F8F9FA', to: '#E9ECEF', deg: 45}}
+               sx={{fontFamily: 'Greycliff CF, sans-serif'}}
+        >Categories</Title>
+        <Stack spacing="xs" justify="flex-start">
+            {categories.map((category, index) => (<Link key={index} href={`/category/${category.slug}`}>
+                <Text c='white' fz="lg" fw={500}>{category.name}</Text>
+            </Link>))}
+        </Stack>
+    </Paper>);
 };
 
 export default Categories;

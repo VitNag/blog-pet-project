@@ -1,4 +1,4 @@
-import {Burger, Container, createStyles, Group, Header, Paper, rem, Transition,} from '@mantine/core';
+import {Burger, Container, createStyles, Group, Header, Paper, rem, Text, Transition,} from '@mantine/core';
 import {useDisclosure} from '@mantine/hooks';
 import {useRouter} from 'next/router';
 import {IconInfoSquare} from '@tabler/icons-react';
@@ -103,9 +103,19 @@ export function HeaderResponsive() {
         {link.label}
     </a>));
 
-    return (<Header height={HEADER_HEIGHT} mb={120} className={classes.root}>
+    return (<Header height={HEADER_HEIGHT} mb={30} className={classes.root}>
         <Container className={classes.header}>
-            <a href={"/"} className={cx(classes.link, {[classes.linkActive]: active === "/"})}>NUNG DEV <IconInfoSquare size={12}/></a>
+            <a href={"/"} className={cx(classes.link, {[classes.linkActive]: active === "/"})}>
+                <Text variant="gradient"
+                      gradient={{
+                          from: '#F8F9FA', to: '#E9ECEF', deg: 45
+                      }}
+                      sx={{fontFamily: 'Greycliff CF, sans-serif'}}
+                      ta="center"
+                      fz="xl"
+                      fw={700}>
+                    NUNG DEV <IconInfoSquare size={20}/>
+                </Text></a>
             <Group spacing={5} className={classes.links}>
                 {items}
             </Group>

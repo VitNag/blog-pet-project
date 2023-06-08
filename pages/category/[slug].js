@@ -3,12 +3,13 @@ import {useRouter} from 'next/router';
 
 import {getCategories, getCategoryPost} from '../../services';
 import {Categories, Loader, PostCard} from '../../components';
+import LoaderComp from "../../components/LoaderComp";
 
 const CategoryPost = ({posts}) => {
     const router = useRouter();
 
     if (router.isFallback) {
-        return <Loader/>;
+        return <LoaderComp/>;
     }
 
     return (<div className="container mx-auto px-10 mb-8">

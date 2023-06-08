@@ -1,22 +1,27 @@
 import React from 'react';
-import Image from 'next/image';
-
-import {grpahCMSImageLoader} from '../util';
+import {Avatar, Group, Paper, Title, Text} from '@mantine/core';
 
 const Author = ({author}) => (<div className="text-center mt-20 mb-8 p-12 relative rounded-lg bg-black bg-opacity-20">
-    <div className="absolute left-0 right-0 -top-14">
-        {/*<Image*/}
-        {/*    unoptimized*/}
-        {/*    loader={grpahCMSImageLoader}*/}
-        {/*    alt={author.name}*/}
-        {/*    height="100px"*/}
-        {/*    width="100px"*/}
-        {/*    className="align-middle rounded-full"*/}
-        {/*    src={author.photo.url}*/}
-        {/*/>*/}
-    </div>
-    <h3 className="text-white mt-4 mb-4 text-xl font-bold">{author.name}</h3>
-    <p className="text-white text-ls">{author.bio}</p>
+    <Paper
+        mt={30}
+        shadow="md"
+        p="xl"
+        radius="md"
+        sx={{backgroundColor: `#212529`}}
+        // className={classes.card}
+    >
+        <Group position="center" spacing="xs" mb={5}>
+            <Avatar size="xl" src={author.photo.url} alt={author.name}/>
+            <Title variant="gradient"
+                   gradient={{from: '#F8F9FA', to: '#E9ECEF', deg: 45}}
+                   sx={{fontFamily: 'Greycliff CF, sans-serif'}}
+                   ta="center"
+            >
+                {author.name}
+            </Title>
+        </Group>
+        <Text c="#F8F9FA">{author.bio}</Text>
+    </Paper>
 </div>);
 
 export default Author;

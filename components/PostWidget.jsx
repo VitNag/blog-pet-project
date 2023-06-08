@@ -1,50 +1,85 @@
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import React, {useEffect, useState} from 'react';
 import moment from 'moment';
 import Link from 'next/link';
+import {getRecentPosts, getSimilarPosts} from '../services';
 
-import { grpahCMSImageLoader } from '../util';
-import { getSimilarPosts, getRecentPosts } from '../services';
+import {createStyles, Paper, rem, Text, Title} from '@mantine/core';
 
-const PostWidget = ({ categories, slug }) => {
-  const [relatedPosts, setRelatedPosts] = useState([]);
+const useStyles = createStyles((theme) => ({
+    card: {
+        height: rem(220),
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+    },
 
-  useEffect(() => {
-    if (slug) {
-      getSimilarPosts(categories, slug).then((result) => {
-        setRelatedPosts(result);
-      });
-    } else {
-      getRecentPosts().then((result) => {
-        setRelatedPosts(result);
-      });
-    }
-  }, [slug]);
+    title: {
+        fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+        fontWeight: 900,
+        color: theme.white,
+        lineHeight: 1.2,
+        fontSize: rem(32),
+        marginTop: theme.spacing.xs,
+    },
 
-  return (
-    <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-      <h3 className="text-xl mb-8 font-semibold border-b pb-4">{slug ? 'Related Posts' : 'Recent Posts'}</h3>
-      {relatedPosts.map((post, index) => (
-        <div key={index} className="flex items-center w-full mb-4">
-          <div className="w-16 flex-none">
-            {/*<Image*/}
-            {/*    loader={grpahCMSImageLoader}*/}
-            {/*    alt={post.title}*/}
-            {/*    height="60px"*/}
-            {/*    width="60px"*/}
-            {/*    unoptimized*/}
-            {/*    className="align-middle rounded-full"*/}
-            {/*    src={post.featuredImage.url}*/}
-            {/*/>*/}
-          </div>
-          <div className="flex-grow ml-4">
-            <p className="text-gray-500 font-xs">{moment(post.createdAt).format('MMM DD, YYYY')}</p>
-            <Link href={`/post/${post.slug}`} className="text-md" key={index}>{post.title}</Link>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
+    category: {
+        color: theme.white, opacity: 0.7, fontWeight: 700, textTransform: 'uppercase',
+    },
+}));
+
+function PostWidget({categories, slug}) {
+    const [relatedPosts, setRelatedPosts] = useState([]);
+
+    useEffect(() => {
+        if (slug) {
+            getSimilarPosts(categories, slug).then((result) => {
+                setRelatedPosts(result);
+            });
+        } else {
+            getRecentPosts().then((result) => {
+                setRelatedPosts(result);
+            });
+        }
+    }, [slug]);
+
+    const {classes} = useStyles();
+
+    return (<>
+        <Paper
+            mb={10}
+            shadow="md"
+            p="md"
+            radius="md"
+            sx={{backgroundColor: `#212529`}}
+        >
+        <Title mb={10} variant="gradient"
+               gradient={{from: '#F8F9FA', to: '#E9ECEF', deg: 45}}
+               sx={{fontFamily: 'Greycliff CF, sans-serif'}}
+        >{slug ? 'Related Posts' : 'Recent Posts'}</Title>
+        {relatedPosts.map((post, index) => (<Link href={`/post/${post.slug}`}>
+            <Paper
+                mb={10}
+                shadow="md"
+                p="xl"
+                radius="md"
+                sx={{backgroundImage: `url(${post.featuredImage.url})`}}
+                className={classes.card}
+            >
+                <div>
+                    <Text className={classes.category} size="xs">
+                        {moment(post.createdAt).format('MMM DD, YYYY')}
+                    </Text>
+                    <Title order={3} className={classes.title}>
+                        {post.title}
+                    </Title>
+                </div>
+            </Paper>
+        </Link>))}
+        </Paper>
+    </>)
+}
 
 export default PostWidget;

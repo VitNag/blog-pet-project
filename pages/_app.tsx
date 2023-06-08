@@ -18,7 +18,7 @@ export default function App(props: AppProps) {
             withNormalizeCSS
             theme={{
                 /** Put your mantine theme override here */
-                primaryColor: 'orange', colorScheme: 'dark',
+                primaryColor: 'green', colorScheme: 'dark',
             }}
         >
             <HeaderResponsive/>
